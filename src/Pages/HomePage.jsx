@@ -1,5 +1,7 @@
 import Header from "../component/Header";
 import PokemonsTeam from "../component/PokemonTeams";
+import TeamList from "../component/TeamList";
+
 
 
 function HomePage(){
@@ -12,6 +14,7 @@ function HomePage(){
         <>
          <Header/>
          <PokemonsTeam/>
+         <TeamList/>
         
         </>
     )
