@@ -1,5 +1,5 @@
-import Header from "../Component/Header";
-import PokemonsTeam from "../Component/PokemonTeams";
+import Header from "../component/Header";
+import PokemonsTeam from "../component/PokemonTeams";
 
 
 function HomePage(){

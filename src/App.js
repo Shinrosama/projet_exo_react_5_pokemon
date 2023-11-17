@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 
-import HomePage from './Pages/HomePage';
-import PokemonsPage from './Pages/PokemonsPage';
+import HomePage from './pages/HomePage';
+import PokemonsPage from './pages/PokemonsPage';
+import PokemonDetail from './pages/PokemonDetail';
 
 
 
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/pokemons" element={<PokemonsPage />} />
-
+        <Route path='/pokemons/:pokemonId/details' element={<PokemonDetail />} />
       </Routes>
     </BrowserRouter>
   );

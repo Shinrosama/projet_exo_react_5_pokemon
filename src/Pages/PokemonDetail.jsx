@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
-import './PokemonTeams.scss'
+import { useParams } from "react-router-dom";
+import Header from "../component/Header"
 
 
 
-
-function PokemonsTeam() {
-
+function PokemonDetail() {
 
     const pokemons = [
         {
@@ -72,37 +70,24 @@ function PokemonsTeam() {
           isInTeam: true,
         },
       ];
-    const pokemonsInTeam = pokemons.filter((pokemon)=>{
-        return pokemon.isInTeam === true;
 
-        
-    })
 
-    console.log (pokemonsInTeam)
+    const { pokemonId } = useParams();
+
+    const pokemonToDisplay = pokemons.find((pokemon)=> {
+    return pokemon.id == pokemonId;
+    });
 
     return (
-        <main>
-        {pokemonsInTeam.map((pokemon) => {
-            return(
-            <Link to= {`/pokemons/${pokemon.id}/details`}>
-                <article>
-                    <div>
-                        {pokemon.name}
-                    </div>
-                    <div className="pokimage">
-                        <img className="pokemonimg" src={pokemon.img} alt="image de pokemon"/>
-                    </div>
-                    
-                </article>
-            </Link>
+    <>
+        <Header />
+        <h2>Détail du Pokemon</h2>
+        <h2>{pokemonToDisplay.name} </h2>
+        <img src={pokemonToDisplay.img} alt={pokemonToDisplay.name}/>
 
+
+    </>
         
-            )
-        }
-
-        )}
-        </main>
     )
 }
-
-export default PokemonsTeam;
+export default PokemonDetail
